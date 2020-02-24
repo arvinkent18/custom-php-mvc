@@ -1,0 +1,17 @@
+# Deny access to .htaccess
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+# Hide the contents of directories
+IndexIgnore *
+
+# Disable directory browsing 
+Options -Indexes
+
+# Deny access to filenames starting with dot(.)
+<FilesMatch "^\.">
+Order allow,deny
+Deny from all
+</FilesMatch>
